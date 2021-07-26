@@ -24,7 +24,7 @@ function chek(){
 
 
     var btnDel=document.createElement('BUTTON');
-    btnDel.setAttribute('onclick','delBtn()')
+    btnDel.setAttribute('onclick','delBtn(this)')
     btnDel.setAttribute('class','btn btn-danger')
     var text='Delete';
     text=document.createTextNode(text)
@@ -64,8 +64,8 @@ function editBtn(e){
     // console.log(e.parentNode.firstChild.nodeValue)
 }
 
-function delBtn(){
-    dv.remove()
+function delBtn(e){
+    e.parentNode.remove()
 }
 
  
