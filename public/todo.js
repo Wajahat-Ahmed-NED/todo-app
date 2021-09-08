@@ -1,6 +1,7 @@
 var a=document.getElementById('inp')
 var dv=document.getElementById('main')
 
+console.log(firebase)
 function chek(){
     var newElement=document.createElement('P');
     newElement.setAttribute('class','bg-light ')
