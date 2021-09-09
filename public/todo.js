@@ -1,54 +1,65 @@
 var a=document.getElementById('inp')
 var dv=document.getElementById('main')
 
-console.log(firebase)
+
 function chek(){
-    var newElement=document.createElement('P');
-    newElement.setAttribute('class','bg-light ')
+
+    // console.log(firebase)
+    var database=firebase.database().ref('todos')
+    var key=database.push().key
+    var todo={
+        name:a.value,
+        key:key,
+    }
+    database.child(key).set(todo);
+    // console.log(key)
+    // var newElement=document.createElement('P');
+    // newElement.setAttribute('class','bg-light ')
+
     // e.preventDefault()
     
     // console.log("hello world")
     // var text='It is a simple text';
-    var text=document.createTextNode(a.value)
-    newElement.appendChild(text)
-    dv.appendChild(newElement)
+    // var text=document.createTextNode(a.value)
+    // newElement.appendChild(text)
+    // dv.appendChild(newElement)
 
 
-    a.value=' ';
+    // a.value=' ';
 
     
-    var text='  ';
-    text=document.createTextNode(text)
+    // var text='  ';
+    // text=document.createTextNode(text)
+    // // btnEdit.appendChild(text)    
+    // newElement.appendChild(text)    
+
+
+
+    // var btnDel=document.createElement('BUTTON');
+    // btnDel.setAttribute('onclick','delBtn(this)')
+    // btnDel.setAttribute('class','btn btn-danger')
+    // var text='Delete';
+    // text=document.createTextNode(text)
+    // btnDel.appendChild(text)
+    // newElement.appendChild(btnDel)
+    // dv.appendChild(newElement)
+    // // document.write("  ")
+
+
+    // var text='  ';
+    // text=document.createTextNode(text)
+    // // btnEdit.appendChild(text)    
+    // newElement.appendChild(text)    
+
+    // var btnEdit=document.createElement('BUTTON')
+    // btnEdit.setAttribute('onclick','editBtn(this)')
+    // btnEdit.setAttribute('class','btn btn-danger')
+
+    // var text='Edit';
+    // text=document.createTextNode(text)
     // btnEdit.appendChild(text)    
-    newElement.appendChild(text)    
-
-
-
-    var btnDel=document.createElement('BUTTON');
-    btnDel.setAttribute('onclick','delBtn(this)')
-    btnDel.setAttribute('class','btn btn-danger')
-    var text='Delete';
-    text=document.createTextNode(text)
-    btnDel.appendChild(text)
-    newElement.appendChild(btnDel)
-    dv.appendChild(newElement)
-    // document.write("  ")
-
-
-    var text='  ';
-    text=document.createTextNode(text)
-    // btnEdit.appendChild(text)    
-    newElement.appendChild(text)    
-
-    var btnEdit=document.createElement('BUTTON')
-    btnEdit.setAttribute('onclick','editBtn(this)')
-    btnEdit.setAttribute('class','btn btn-danger')
-
-    var text='Edit';
-    text=document.createTextNode(text)
-    btnEdit.appendChild(text)    
-    newElement.appendChild(btnEdit)    
-    dv.appendChild(newElement)
+    // newElement.appendChild(btnEdit)    
+    // dv.appendChild(newElement)
 }
 
 function delAll(){
