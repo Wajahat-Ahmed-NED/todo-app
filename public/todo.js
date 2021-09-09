@@ -55,7 +55,7 @@ firebase.database().ref('todos').on('child_added', function (data) {
 })
 
 function chek() {
-
+    if(a.value.length!=0){
     // console.log(firebase)
     var database = firebase.database().ref('todos')
     var key = database.push().key
@@ -63,9 +63,12 @@ function chek() {
         name: a.value,
         key: key,
     }
-    database.child(key).set(todo);
+    database.child(key).set(todo);}
+    else{
+        alert('wrong value')
+    }
     // console.log(key)
-    a.value=" "
+    a.value=""
 
 }
 

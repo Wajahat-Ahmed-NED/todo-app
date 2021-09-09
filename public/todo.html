@@ -13,76 +13,106 @@
     <title>Hello, world!</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
+    <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 
-<script>
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  var firebaseConfig = {
-    apiKey: "AIzaSyCVrgOr-cmjUhZ2jEyOejdP5g7KWYpzzy8",
-    authDomain: "todoappwajahat.firebaseapp.com",
-    projectId: "todoappwajahat",
-    storageBucket: "todoappwajahat.appspot.com",
-    messagingSenderId: "531714637740",
-    appId: "1:531714637740:web:90f4ac60debc646a1d0409",
-    measurementId: "G-D5EDWNCFLT"
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyCVrgOr-cmjUhZ2jEyOejdP5g7KWYpzzy8",
+            authDomain: "todoappwajahat.firebaseapp.com",
+            projectId: "todoappwajahat",
+            storageBucket: "todoappwajahat.appspot.com",
+            messagingSenderId: "531714637740",
+            appId: "1:531714637740:web:90f4ac60debc646a1d0409",
+            measurementId: "G-D5EDWNCFLT"
 
-    // apiKey: "AIzaSyCmhQLB-ESpOgZZu1ONWG96fmunWciuPrM",
-    // authDomain: "student-7e49c.firebaseapp.com",
-    // projectId: "student-7e49c",
-    // storageBucket: "student-7e49c.appspot.com",
-    // messagingSenderId: "666244411396",
-    // appId: "1:666244411396:web:6e43d88c0880eb54b54551",
-    // measurementId: "G-S5822Z6F31"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-  </script>
-  <style>
-      body{
-          background-color: beige;
-      }
-      h1{
-        font-family: 'Pacifico', cursive;
-        font-size: 40px;
-      }
-  </style>
+            // apiKey: "AIzaSyCmhQLB-ESpOgZZu1ONWG96fmunWciuPrM",
+            // authDomain: "student-7e49c.firebaseapp.com",
+            // projectId: "student-7e49c",
+            // storageBucket: "student-7e49c.appspot.com",
+            // messagingSenderId: "666244411396",
+            // appId: "1:666244411396:web:6e43d88c0880eb54b54551",
+            // measurementId: "G-S5822Z6F31"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+    <style>
+        body {
+            
+            background-color: beige;
+                        animation-name: example;
+            animation-duration: 4s;
+            animation-iteration-count: 300;
+        }
+
+        @keyframes example {
+            0% {
+                background-color: rgb(255, 205, 205);
+            }
+
+            25% {
+                background-color: beige;
+            }
+
+            50% {
+                background-color: rgb(255, 214, 166);
+            }
+
+            100% {
+                background-color: rgb(175, 247, 175);
+            }
+        }
+
+       
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 40px;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container p-5" style="text-align: center;">
         <h1>TODO APP</h1>
-<br>
+        <br>
         <form>
             <div class="input-group mb-3">
-                <input type="text" id="inp"class="form-control" placeholder="Your To Do's  " aria-label="Recipient's username" aria-describedby="button-addon2">
+                <input type="text" id="inp" class="form-control" placeholder="Your To Do's  "
+                    aria-label="Recipient's username" aria-describedby="button-addon2">
                 <!-- <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button> -->
-                <button type= 'button'onclick="chek()" class="btn btn-primary ">ADD</button>
-              </div>
+                <button type='button' id="btn" onclick="chek()" class="btn btn-primary " data-toggle="modal"
+                    data-target="#exampleModal">ADD</button>
+            </div>
             <!-- <button type= 'button'onclick="delAll()">DELETE ALL</button> -->
-            <button type="button" onclick="delAll() "class="btn btn-outline-dark">DELETE All</button>
+            <button type="button" onclick="delAll() " class="btn btn-outline-dark">DELETE All</button>
             <br>
 
         </form>
         <br>
-        
+
+
         <div id="main">
         </div>
-     
-        <script src="todo.js"></script> 
+
+        <script src="todo.js"></script>
     </div>
 
     <footer>
-        <div class="container rounded-pill" style="border: 2px solid black; padding: 5px;text-align: center; box-shadow: 0px 0px 1px 2px grey; ">A project of JAWAN PAKISTAN</div>
+        <div class="container rounded-pill"
+            style="border: 2px solid black; padding: 5px;text-align: center; box-shadow: 0px 0px 1px 2px grey; ">A
+            project of JAWAN PAKISTAN</div>
     </footer>
     <!-- Optional JavaScript; choose one of the two! -->
 
