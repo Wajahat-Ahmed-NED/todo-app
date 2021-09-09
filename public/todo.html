@@ -11,6 +11,10 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <title>Hello, world!</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
@@ -43,6 +47,15 @@
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
   </script>
+  <style>
+      body{
+          background-color: beige;
+      }
+      h1{
+        font-family: 'Pacifico', cursive;
+        font-size: 40px;
+      }
+  </style>
 </head>
 
 <body>
@@ -67,6 +80,10 @@
      
         <script src="todo.js"></script> 
     </div>
+
+    <footer>
+        <div class="container rounded-pill" style="border: 2px solid black; padding: 5px;text-align: center; box-shadow: 0px 0px 1px 2px grey; ">A project of JAWAN PAKISTAN</div>
+    </footer>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
