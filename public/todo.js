@@ -1,7 +1,8 @@
 var a = document.getElementById('inp')
 var dv = document.getElementById('main')
 
-firebase.database().ref('todos').on('child_added', function (data) {
+firebase.database().ref('todos').on('child_added', function (data) 
+{
     console.log(data.val().name)
     var newElement = document.createElement('P');
     newElement.setAttribute('class', 'bg-light ')
@@ -29,6 +30,7 @@ firebase.database().ref('todos').on('child_added', function (data) {
     btnDel.setAttribute('id',data.val().key)
     btnDel.setAttribute('onclick', 'delBtn(this)')
     btnDel.setAttribute('class', 'btn btn-danger')
+
     var text = 'Delete';
     text = document.createTextNode(text)
     btnDel.appendChild(text)
@@ -56,7 +58,7 @@ firebase.database().ref('todos').on('child_added', function (data) {
 
 function chek() {
     if(a.value.length!=0){
-    // console.log(firebase)
+    // console.log(firebase)    
     var database = firebase.database().ref('todos')
     var key = database.push().key
     var todo = {
